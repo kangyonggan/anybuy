@@ -105,12 +105,14 @@
 
         #login-form {
             margin-top: 20px;
-            position: relative;
         }
-        #login-form >div {
+        #login-form > div {
             margin-bottom: 20px;
         }
 
+        .username-field, .password-field {
+            position: relative;
+        }
         label {
             display: block;
             width: 40px;
@@ -194,11 +196,11 @@
         <div class="login-box">
         <b class="f18">密码登录</b>
             <form id="login-form">
-                <div>
+                <div class="username-field">
                     <label><i class="fa fa-fw fa-2x fa-user"></i></label>
                     <input placeholder="手机名/会员名/邮箱">
                 </div>
-                <div>
+                <div class="password-field">
                     <label><i class="fa fa-fw fa-2x fa-lock"></i></label>
                     <input>
                 </div>
