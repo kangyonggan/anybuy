@@ -44,7 +44,7 @@
             margin: 0 100px;
         }
 
-        #header .taobao-log {
+        .taobao-log {
             height: 44px;
             display: inline-block;
             vertical-align: middle;
@@ -66,6 +66,10 @@
             top: 120px;
             right: 60px;
             width: 350px;
+        }
+        #content .login-box-warp .taobao-log-warp {
+
+            display: none;
         }
         #content .login-box {
             width: 300px;
@@ -113,7 +117,7 @@
         .username-field, .password-field {
             position: relative;
         }
-        label {
+        #login-form label {
             display: block;
             width: 40px;
             height: 40px;
@@ -126,7 +130,7 @@
             top: 1px;
             outline: 0;
         }
-        input {
+        #login-form input {
             text-rendering: auto;
             color: initial;
             letter-spacing: normal;
@@ -169,9 +173,30 @@
         }
 
 
-
         .text-muted {
             color: #9c9c9c;
+        }
+        
+        @media (max-width: 767px) {
+            #header {
+                display: none;
+            }
+            #footer {
+                display: none;
+            }
+
+            #content {
+                background: white;
+            }
+            #content .login-box-warp {
+                position: static;
+                margin: 0 auto;
+            }
+            #content .login-box-warp .taobao-log-warp {
+                display: block;
+                margin-bottom: 40px;
+                margin-left: -10px;
+            }
         }
     </style>
 </head>
@@ -179,7 +204,7 @@
 
 <div id="header">
     <div class="log">
-        <a href="http://www.taobao.com">
+        <a href="http://www.taobao.com" class="taobao-log-warp">
             <img class="taobao-log" src="../static/app/img/taobao-log.png">
         </a>
 
@@ -195,8 +220,13 @@
 
 <div id="content">
     <div class="login-box-warp">
+
         <div class="login-box">
-        <b class="f18">密码登录</b>
+            <a href="http://www.taobao.com" class="taobao-log-warp">
+                <img class="taobao-log" src="../static/app/img/taobao-log.png">
+            </a>
+
+            <b class="f18">密码登录</b>
             <form id="login-form">
                 <div class="username-field">
                     <label><i class="fa fa-fw fa-2x fa-user"></i></label>
@@ -210,11 +240,11 @@
             <button id="login">登录</button>
             <ul class="extra-login">
                 <li>
-                    <a><i  class="fa fa-fw fa-weibo weibo-color"></i> 新浪登录</a>
+                    <a><i class="fa fa-fw fa-weibo weibo-color"></i> 新浪登录</a>
                     &nbsp;
                     &nbsp;
                     &nbsp;
-                    <a><i  class="fa fa-fw fa-wechat wechat-color"></i> 微信登录</a>
+                    <a><i class="fa fa-fw fa-wechat wechat-color"></i> 微信登录</a>
                 </li>
             </ul>
             <div class="login-links text-right">
