@@ -10,7 +10,7 @@
 
         <!--base mapper-->
         <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
-            <property name="mappers" value="com.anybuy.mapper.MyMapper"/>
+            <property name="mappers" value="com.anybuy.util.MyMapper"/>
         </plugin>
 
         <!--lombok plugin-->
@@ -18,7 +18,7 @@
 
         <!--jdbc driver-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/app"
+                        connectionURL="jdbc:mysql://localhost:3306/anybuy"
                         userId="root" password="123456"/>
 
         <!--Xxx.java-->
@@ -38,7 +38,7 @@
         </javaClientGenerator>
 
         <!--table name-->
-        <table tableName="user">
+        <table tableName="demo">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
     </context>

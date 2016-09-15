@@ -21,7 +21,7 @@ public class MyBatisMapperScannerConfig {
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
         mapperScannerConfigurer.setBasePackage("com.anybuy.mapper");
         Properties properties = new Properties();
-        properties.setProperty("mappers", "com.anybuy.mapper.MyMapper");
+        properties.setProperty("mappers", "com.anybuy.util.MyMapper");
         properties.setProperty("notEmpty", "false");
         properties.setProperty("IDENTITY", "MYSQL");
         mapperScannerConfigurer.setProperties(properties);
