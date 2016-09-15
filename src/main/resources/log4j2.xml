@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
+        </Console>
+        <!--文件路径自行修改, 但不要提交此文件-->
+        <File name="File" fileName="/Users/kyg/code/logs/anybuy-all.log" append="false">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
+        </File>
+        <File name="ErrorFile" fileName="/Users/kyg/code/logs/anybuy-error.log" append="false">
+            <PatternLayout pattern="[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%logger{36}.%t:%L] - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- debug以上的信息输出到控制台(包括info和error)-->
+        <Root level="debug">
+            <AppenderRef ref="Console"/>
+        </Root>
+        <!--info级别以上的信息写入文件(debug不会被写入)-->
+        <Root level="info">
+            <AppenderRef ref="File"/>
+        </Root>
+        <!--error级别的信息会写入错误日志文件(info和debug不会写入此文件)-->
+        <Root level="error">
+            <AppenderRef ref="ErrorFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
