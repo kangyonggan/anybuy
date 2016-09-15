@@ -1,5 +1,6 @@
 server:
   port: 8080
+  context-path:
 
 spring:
   datasource:
@@ -22,3 +23,8 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     initialize: false
+
+app:
+  prop:
+    - @project.name@
+    - @pom.version@
