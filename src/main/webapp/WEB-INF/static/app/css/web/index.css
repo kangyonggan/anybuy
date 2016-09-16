@@ -27,7 +27,7 @@ ul {
 }
 
 .color-dark {
-    color: #6C6C6C;
+    color: #6C6C6C !important;
 }
 
 .color-white {
@@ -454,16 +454,17 @@ ul {
     float: left;
     width: 129px;
     height: 68px;
+    background: #fff;
     border-right: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
 
 .no-right-border {
-    border-right: none;
+    border-right: none !important;
 }
 
 .no-bottom-border {
-    border-bottom: none;
+    border-bottom: none !important;
 }
 
 .face-content-right {
@@ -598,20 +599,205 @@ ul {
 }
 
 .face-right-login > div.patch {
-    height: 212px;
-    background: lightgreen;
-    margin-top: 5px;
+    height: 210px;
+    background: #fff;
 }
 
 .face-right-login > div.app {
-    margin-top: 5px;
+    margin-top: 3px;
     height: 140px;
-    background: pink;
+    background: #fff;
+}
+
+.face-right-login > div.app > div.app-header > a {
+    margin: 3px;
+    color: #333;
+}
+
+.face-right-login > div.app > div.app-header > a.strong {
+    font-weight: 700;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+.face-right-login > div.app > div.app-header > a.more:hover {
+    color: #c12c26;
+}
+
+.patch-list > li > a {
+    display: block;
+    width: 71px;
+    height: 69px;
+    float: left;
+    color: #6c6c6c;
+    border-right: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.patch-list > li > a:hover {
+    color: #c12c26;
+}
+
+.patch-img {
+    margin: 10px auto;
+    width: 24px;
+    height: 24px;
+    background-size: 220px 897px !important;
+}
+
+.patch-01 > div {
+    background: url("../../img/all.png") no-repeat 0px 0px;
+}
+
+.patch-02 > div {
+    background: url("../../img/all.png") no-repeat 0px -44px;
+}
+
+.patch-03 > div {
+    background: url("../../img/all.png") no-repeat 0px -86px;
+}
+
+.patch-04 > div {
+    background: url("../../img/all.png") no-repeat 0px -130px;
+}
+
+.patch-05 > div {
+    background: url("../../img/all.png") no-repeat 0px -176px;
+}
+
+.patch-06 > div {
+    background: url("../../img/all.png") no-repeat 0px -220px;
+}
+
+.patch-07 > div {
+    background: url("../../img/all.png") no-repeat 0px -263px;
+}
+
+.patch-08 > div {
+    background: url("../../img/all.png") no-repeat 0px -307px;
+}
+
+.patch-09 > div {
+    background: url("../../img/all.png") no-repeat 0px -352px;
+}
+
+.patch-10 > div {
+    background: url("../../img/all.png") no-repeat 0px -396px;
+}
+
+.patch-11 > div {
+    background: url("../../img/all.png") no-repeat 0px -440px;
+}
+
+.patch-12 > div {
+    background: url("../../img/all.png") no-repeat 0px -484px;
+}
+
+ul.app-list {
+    margin: 0 5px;
+    clear: both;
+}
+
+ul.app-list > li > a {
+    float: left;
+    width: 40px;
+    display: block;
+    height: 40px;
+    margin: 8px;
+}
+
+ul.app-list > li > a > img {
+    height: 32px;
+    width: 32px;
 }
 
 .face-bottom {
-    background: khaki;
-    height: 91px;
+    background: #fff;
+    height: 94px;
+}
+.face-bottom > div {
+    width: 177px;
+    height: 70px;
+    margin-top: 5px;
+}
+.face-bottom > div > div.img {
+    float: left;
+    width: 70px;
+    height: 70px;
+}
+.face-bottom > div > div.img > a > img {
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 10px;
+    border: 1px solid #ededed;
+}
+
+.face-bottom > div > div.info {
+    float: left;
+    width: 90px;
+    height: 70px;
+    margin-left: 8px;
+}
+.face-bottom > div > div.info > a.strong {
+    font-size: 14px;
+    font-weight: 700;
+}
+.face-bottom > div > div.info > a {
+    float: left;
+    margin-top: 5px;
+}
+
+.face-bottom > div.face01 > div.img > a {
+    color: #9a745f;
+}
+.face-bottom > div.face01 > div.img > a:hover > img {
+    border-color: #9a745f;
+}
+.face-bottom > div.face01 > div.info > a {
+    color: #9a745f;
+}
+
+.face-bottom > div.face02 > div.img > a {
+    color: #81c18f;
+}
+.face-bottom > div.face02 > div.img > a:hover > img {
+    border-color: #81c18f;
+}
+.face-bottom > div.face02 > div.info > a {
+    color: #81c18f;
+}
+
+.face-bottom > div.face03 > div.img > a {
+    color: #72a5f6;
+}
+.face-bottom > div.face03 > div.img > a:hover > img {
+    border-color: #72a5f6;
+}
+.face-bottom > div.face03 > div.info > a {
+    color: #72a5f6;
+}
+
+.face-bottom > div.face04 > div.img > a {
+    color: #846fc7;
+}
+.face-bottom > div.face04 > div.img > a:hover > img {
+    border-color: #846fc7;
+}
+.face-bottom > div.face04 > div.info > a {
+    color: #846fc7;
+}
+
+.face-bottom > div.face05 > div.img > a {
+    color: #de525e;
+}
+.face-bottom > div.face05 > div.img > a:hover > img {
+    border-color: #de525e;
+}
+.face-bottom > div.face05 > div.info > a {
+    color: #de525e;
 }
 /*屏幕适配*/
 @media (min-width: 1190px) {
@@ -637,30 +823,26 @@ ul {
     }
 }
 /*face*/
-/*often*/
-.often {
-    height: 700px;
-    background: lavender;
-}
-/*often*/
-/*hot*/
-.hot {
-    height: 700px;
-    background: #f60;
-}
-/*hot*/
 /*favorite*/
 .favorite {
     height: 700px;
-    background: #06f;
+    background: #f1f1f1;
 }
 /*favorite*/
 /*main*/
 
 /*footer*/
 .footer {
-    height: 120px;
-    background: #ccc;
+    width: 100%;
+    background: #f1f1f1;
+}
+.footer-container {
+    margin: 0 auto;
+    width: 1190px;
+    height: 80px;
     text-align: center;
+    border-top: 2px solid #F40;
+    line-height: 80px;
+    font-size: 18px;
 }
 /*footer*/

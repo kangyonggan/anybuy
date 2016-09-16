@@ -1,4 +1,6 @@
-<div class="space-10"></div>
+<div class="space-10" style="background: #f1f1f1"></div>
 <div class="footer">
-    网站公共页脚
+    <div class="footer-container">
+        上海某宝技术有限公司 &copy; 2016 技术支持: 康永敢 侯宾宾
+    </div>
 </div>
