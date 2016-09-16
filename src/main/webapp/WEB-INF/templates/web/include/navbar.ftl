@@ -1,14 +1,14 @@
 <div class="navbar">
     <div class="navbar-content">
     <#--未登录时显示-->
-        <div class="navbar-sign navbar-height pull-left hidden">
+        <div class="navbar-sign navbar-height pull-left">
             <a href="#" class="color-orange text">亲，请登录</a>
             <a href="#" class="text ahover">免费注册</a>
         </div>
     <#--未登录时显示-->
 
     <#--登录之后显示-->
-        <div class="navbar-user navbar-height pull-left">
+        <div class="navbar-user navbar-height pull-left hidden">
             <a href="#" class="text ahover navbar-relative" id="user-info">
                 幻灭之某宝
                 <i class="fa fa-fw fa-caret-down color-dark"></i>
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="navbar-user navbar-height pull-left">
+        <div class="navbar-user navbar-height pull-left hidden">
             <a href="#" class="text navbar-relative" id="user-message">
                 <i class="fa fa-fw fa-envelope color-orange"></i>
                 消息 <span class="color-orange">1</span>
@@ -124,5 +124,3 @@
     <#--导航条右侧-->
     </div>
 </div>
-
-<div style="height: 2000px;"></div>
