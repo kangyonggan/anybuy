@@ -5,20 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="stylesheet" href="../static/app/css/app.css">
+    <link rel="stylesheet" href="../static/app/css/taobao-base.css">
     <link rel="stylesheet" href="../static/lib/fontawesome/css/font-awesome.min.css">
     <style type="text/css">
-
-        body {
-            font: 12px/1.5 "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
-        }
-
-        a {
-            color: #6c6c6c;
-        }
-
-        .taobao-color {
-            color: #f40;
-        }
 
         #nav {
             height: 35px;
@@ -30,7 +19,6 @@
             width: 900px;
             margin: 0 auto;
         }
-
         @media (min-width: 1190px) {
             #page {
                 width: 1190px;
@@ -124,14 +112,36 @@
         }
 
         .content {
-            height: 300px;
             padding: 50px 0;
         }
         #register-mobile-form .form-list {
             margin: 0 auto;
             width: 720px;
-            height: 300px;
-            background: gold;
+            font-size: 14px;
+        }
+        #register-mobile-form .form-group {
+            padding: 10px 0;
+        }
+
+        .form-item {
+            padding: 10px 0 10px 260px;
+            height: 36px;
+            line-height: 36px;
+            zoom: 1;
+        }
+
+        .form-item .form-label {
+            display: inline;
+            float: left;
+            margin-left: -260px;
+            width: 240px;
+            height: 37px;
+            line-height: 37px;
+            text-align: right;
+        }
+
+        .user-email-register {
+            color: #ff4001;
         }
 
         .user-suggest {
@@ -213,12 +223,29 @@
 
         <form id="register-mobile-form">
             <div class="form-list form-main-list">
-
+                <div class="form-group">
+                    <div class="form-item">
+                        <span class="form-label">手机号</span>
+                    </div>
+                    <div class="form-item">
+                        <span class="form-label">验证</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-item">
+                        <button class="btn btn-large btn-disabled" id="register-mobile-button">
+                            下一步
+                        </button>
+                    </div>
+                    <div class="form-item f12">
+                        <a href="#" class="user-email-register">切换成企业账户注册</a>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
 
-    <div class="user-suggest text-right">
+    <div class="user-suggest taobao-color text-right">
         <i class="fa fa-fw fa-commenting taobao-color"></i>"淘宝注册"改进建议
     </div>
 
