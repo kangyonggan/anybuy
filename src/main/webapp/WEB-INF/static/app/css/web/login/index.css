@@ -139,29 +139,28 @@ a {
     border: 1px solid #ddd;
 }
 
-#footer {
-    height: 100px;
-}
+/*#footer {*/
+    /*height: 100px;*/
+/*}*/
 
-#footer .hd {
-    height: 27px;
-    border-bottom: 1px solid #ddd;
-}
+/*#footer .hd {*/
+    /*height: 27px;*/
+    /*border-bottom: 1px solid #ddd;*/
+/*}*/
 
-.footer {
-    margin: 60px auto 0;
-    padding: 7px 0 9px;
-    border-top: 1px solid #ddd;
-    width: 1200px;
-}
+/*.footer {*/
+    /*margin: 60px auto 0;*/
+    /*padding: 7px 0 9px;*/
+    /*border-top: 1px solid #ddd;*/
+    /*width: 1200px;*/
+/*}*/
 
-.footer b {
-    display: inline;
-    margin: 0 3px;
-    font-weight: 400;
-    color: #ddd;
-}
-
+/*.footer b {*/
+    /*display: inline;*/
+    /*margin: 0 3px;*/
+    /*font-weight: 400;*/
+    /*color: #ddd;*/
+/*}*/
 
 .text-muted {
     color: #9c9c9c;

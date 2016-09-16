@@ -1,14 +1,15 @@
 <#assign title="某宝网 - 登录界面"/>
 
-<@override name="style">
-    <link rel="stylesheet" href="${ctx}/static/app/css/web/login.css">
+<@override name="app-style">
+    <link rel="stylesheet" href="${ctx}/static/app/css/web/login/index.css">
+    <link rel="stylesheet" href="${ctx}/static/app/css/web/include/login-footer.css">
 </@override>
 
-<@override name="app-content">
+<@override name="app-body">
 
 <div id="header">
     <div class="log">
-        <a href="http://www.taobao.com" class="taobao-log-warp">
+        <a href="${ctx}/" class="taobao-log-warp" title="某宝网">
             <img class="taobao-log" src="${ctx}/static/app/img/taobao-log.png">
         </a>
 
@@ -34,11 +35,11 @@
             <form id="login-form">
                 <div class="username-field">
                     <label><i class="fa fa-fw fa-2x fa-user"></i></label>
-                    <input placeholder="手机名/会员名/邮箱">
+                    <input id="mobile-input" placeholder="手机名/会员名/邮箱">
                 </div>
                 <div class="password-field">
                     <label><i class="fa fa-fw fa-2x fa-lock"></i></label>
-                    <input>
+                    <input id="password-input" placeholder="请输入密码">
                 </div>
             </form>
             <button id="login">登录</button>
@@ -60,11 +61,13 @@
     </div>
 </div>
 
-</@override>
-
-
-<@override name="script">
+    <#include "../include/login-footer.ftl">
 
 </@override>
 
-<@extends name="../layout.ftl"/>
+
+<@override name="app-script">
+
+</@override>
+
+<@extends name="../../layout.ftl"/>
