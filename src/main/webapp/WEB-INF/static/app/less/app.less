@@ -1,0 +1,38 @@
+/*圆角*/
+.border-radius(@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+
+/*模糊*/
+.blur(@radius:5px) {
+  -webkit-filter: blur(@radius); /* Chrome, Opera */
+  -moz-filter: blur(@radius);
+  -ms-filter: blur(@radius);
+  filter: blur(@radius);
+}
+
+/*透明*/
+.opacity {
+  opacity: 0.50;
+  filter: alpha(opacity=50);
+}
+
+
+.blur {
+  .blur(@radius:3px);
+}
+.blur:hover {
+  .blur(@radius:0);
+}
+
+.blur-8 {
+  .blur(@radius:8px);
+}
+
+.border-radius {
+  .border-radius(@radius: 5px);
+}
+
+
