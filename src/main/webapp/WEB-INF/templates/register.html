@@ -152,10 +152,47 @@
         }
         .verify-slider-warp {
             padding-right: 150px;
+            position: relative;
         }
+
         #verify-slider {
-            margin-top: 10px;
+            height: 30px;
+            line-height: 30px;
         }
+        #verify-slider span {
+            z-index: 2;
+        }
+        .verify-slider-warp #verify-progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #62b900;
+            height: 33px;
+
+            opacity:0.6;
+            filter: alpha(opacity=60);
+            /*z-index: -1;*/
+            /*width: 100px;*/
+        }
+
+        #verify-slider .ui-slider-handle {
+            height: 35px;
+            line-height: 35px;
+            width: 35px;
+            color: #9c9c9c;
+            outline: 0;
+            background: #ffffff;
+            z-index:3;
+        }
+        #verify-slider .ui-slider-handle:before {
+            content: " >> ";
+        }
+        #verify-slider .ui-state-active {
+            border: 1px solid #cccccc;
+            background: #ffffff;
+            outline: 0;
+        }
+
 
         .user-email-register {
             color: #ff4001;
@@ -253,7 +290,11 @@
                     <div class="form-item">
                         <span class="form-label">验证</span>
                         <div class="verify-slider-warp">
-                            <div id="verify-slider"/>
+                            <div id="verify-slider" class="f12 text-center">
+                                <span>请按住滑块,拖动到最右边</span>
+                            </div>
+                            <div id="verify-progress-bar">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -328,20 +369,36 @@
 //        select内容后台格式化统一
         $("select.mobile-select").select2();
 
-        $("#verify-slider").slider({
+
+        var $slider = $("#verify-slider");  //验证滑动条
+        var $registerBtn = $("#register-mobile-button");    //注册按钮
+        var $progressBar = $("#verify-progress-bar");   //进度条
+        $slider.slider({
+            animate: "slow",
+            slide: function( event, ui ) {
+                var selection = $slider.slider("value");    //用户拖拽值
+                var percent = (selection/100);
+                var actualWidth = percent*$slider.width();
+                $progressBar.width(actualWidth);
+            },
             stop: function( event, ui ) {
-                var $slider = $(this);
-                var $registerBtn = $("#register-mobile-button");
                 var start = 0;  //初始值
                 var end = 100;  //结束值
                 var selection = $slider.slider("value");    //用户拖拽值
                 if(end === selection) {
+                    $slider.slider( "disable" );
                     $registerBtn.removeClass("btn-disabled").removeAttr("disabled");
-
-                    //添加定时器
+                    $progressBar.text("验证通过").addClass("text-center");
+                    $progressBar.css({
+                        "color": "#FFFFFF",
+                        "opacity": "1.0",
+                        "filter": "alpha(opacity=60)"
+                    });
+                    $slider.find("span").text("");
                 } else {
                     $registerBtn.addClass("btn-disabled").attr("disabled");
                     $slider.slider("value", start);
+                    $progressBar.width(start);
                 }
             }
         });
