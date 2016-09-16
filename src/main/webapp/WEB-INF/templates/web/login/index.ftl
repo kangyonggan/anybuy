@@ -55,7 +55,7 @@
             <div class="login-links text-right">
                 <a href="#">忘记密码</a>
                 &nbsp;&nbsp;
-                <a href="#">免费注册</a>
+                <a href="${ctx}/register">免费注册</a>
             </div>
         </div>
     </div>
