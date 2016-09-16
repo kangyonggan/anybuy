@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @since 16/9/15
  */
 @Controller
-@RequestMapping
+@RequestMapping("/login")
 public class LoginController {
 
     private static final String PATH_ROOT = "web/login/";
@@ -22,7 +22,7 @@ public class LoginController {
      *
      * @return
      */
-    @RequestMapping(value = "login", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String index() {
         return PATH_INDEX;
     }

@@ -1,0 +1,190 @@
+body {
+    font: 12px/1.5 "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+}
+
+a {
+    color: #6c6c6c;
+}
+
+.taobao-color {
+    color: #f40;
+}
+.weibo-color {
+    color: #e52425;
+}
+.alipay-color {
+    color: #1ba9ee;
+}
+.wechat-color {
+    color: #62b900;
+}
+
+#header {
+    height: 70px;
+    line-height: 70px;
+}
+
+#header .login-advice {
+    float: right;
+    color: #666666;
+}
+
+#header .log {
+    height: 44px;
+    margin: 0 100px;
+}
+
+.taobao-log {
+    height: 44px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#content {
+    height: 600px;
+    position: relative;
+    background: url("/static/app/img/login-content-bg.jpg");
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#content .login-box-warp {
+    background-color: rgba(255,255,255,.9);
+    position: absolute;
+    top: 120px;
+    right: 60px;
+    width: 350px;
+}
+#content .login-box-warp .taobao-log-warp {
+
+    display: none;
+}
+#content .login-box {
+    width: 300px;
+    padding: 25px 25px 23px;
+    color: #6c6c6c;
+    background: #fff;
+    margin: 0 auto;
+}
+
+#content #login {
+    width: 300px;
+    height: 42px;
+    border: 0;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    line-height: 42px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background: #f40;
+    border-radius: 3px;
+    cursor: pointer;
+    zoom: 1;
+}
+#content #login:hover {
+    background-color: #f52b00;
+}
+
+#content .extra-login {
+    margin: 20px 0;
+}
+#content .extra-login a:hover{
+    cursor: pointer;
+    color: #f40;
+}
+
+#login-form {
+    margin-top: 20px;
+}
+#login-form > div {
+    margin-bottom: 20px;
+}
+
+.username-field, .password-field {
+    position: relative;
+}
+#login-form label {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    background: #ddd;
+    text-align: center;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    outline: 0;
+}
+#login-form input {
+    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+
+    width: 240px;
+    font-size: 14px;
+    line-height: 18px;
+    height: 18px;
+    padding: 11px 8px 11px 50px;
+    border: 1px solid #ddd;
+}
+
+#footer {
+    height: 100px;
+}
+
+#footer .hd {
+    height: 27px;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer {
+    margin: 60px auto 0;
+    padding: 7px 0 9px;
+    border-top: 1px solid #ddd;
+    width: 1200px;
+}
+
+.footer b {
+    display: inline;
+    margin: 0 3px;
+    font-weight: 400;
+    color: #ddd;
+}
+
+
+.text-muted {
+    color: #9c9c9c;
+}
+
+@media (max-width: 767px) {
+    #header {
+        display: none;
+    }
+    #footer {
+        display: none;
+    }
+
+    #content {
+        background: white;
+    }
+    #content .login-box-warp {
+        position: static;
+        margin: 0 auto;
+    }
+    #content .login-box-warp .taobao-log-warp {
+        display: block;
+        margin-bottom: 40px;
+        margin-left: -10px;
+    }
+}

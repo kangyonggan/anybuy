@@ -1,6 +1,6 @@
 <#assign title="某宝网 - 淘！我喜欢"/>
 
-<@override name="app-style">
+<@override name="style">
 <link rel="stylesheet" href="${ctx}static/app/css/web/index.css"/>
 </@override>
 
@@ -332,7 +332,7 @@
 </div>
 </@override>
 
-<@override name="app-script">
+<@override name="script">
 <script src="${ctx}static/app/js/web/index/index.js"></script>
 </@override>
 
