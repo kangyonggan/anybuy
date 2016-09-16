@@ -11,10 +11,14 @@ a:hover {
     text-decoration: underline !important;
 }
 
+/*颜色定义*/
+
 .taobao-color {
     color: #f40;
 }
 
+
+/*按钮样式*/
 
 .btn {
     display: inline-block;
