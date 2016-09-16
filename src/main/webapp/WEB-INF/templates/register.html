@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../static/app/css/app.css">
     <link rel="stylesheet" href="../static/app/css/taobao-base.css">
     <link rel="stylesheet" href="../static/lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/lib/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../static/lib/jqueryui/css/jquery-ui.min.css">
     <style type="text/css">
 
         #nav {
@@ -37,7 +39,7 @@
 
         #header .logo img {
             display: inline-block;
-            height: 43px;
+            height: 50px;
             vertical-align: middle;
         }
 
@@ -140,6 +142,20 @@
             text-align: right;
         }
 
+        #mobile-input {
+            margin-left: -3px;
+            height: 26px;
+            line-height: 26px;
+            padding-left: 8px;
+            font-size: 14px;
+        }
+        .verify-slider-warp {
+            padding-right: 150px;
+        }
+        #verify-slider {
+            margin-top: 10px;
+        }
+
         .user-email-register {
             color: #ff4001;
         }
@@ -226,9 +242,18 @@
                 <div class="form-group">
                     <div class="form-item">
                         <span class="form-label">手机号</span>
+                        <select class="mobile-select" style="width: 150px;">
+                            <option value="china">中国大陆 +86</option>
+                            <option value="china_tw">中国台湾 +886</option>
+                        </select>
+                        <input placeholder="请输入您的手机号码" id="mobile-input">
                     </div>
+
                     <div class="form-item">
                         <span class="form-label">验证</span>
+                        <div class="verify-slider-warp">
+                            <div id="verify-slider"/>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -292,5 +317,32 @@
 
 </div>
 
+<script src="../static/lib/jquery/jquery-3.1.0.min.js"></script>
+<script src="../static/lib/select2/js/select2.min.js"></script>
+<script src="../static/lib/jqueryui/js/jquery-ui.min.js"></script>
+
+<script>
+    $(function () {
+//        select内容后台格式化统一
+        $("select.mobile-select").select2();
+
+        $("#verify-slider").slider({
+            stop: function( event, ui ) {
+                var $slider = $(this);
+                var $registerBtn = $("#register-mobile-button");
+                var start = 0;  //初始值
+                var end = 100;  //结束值
+                var selection = $slider.slider("value");    //用户拖拽值
+                if(end === selection) {
+                    $registerBtn.removeClass("btn-disabled");
+                    //添加定时器
+                } else {
+                    $registerBtn.addClass("btn-disabled");
+                    $slider.slider("value", start);
+                }
+            }
+        });
+    });
+</script>
 </body>
 </html>
