@@ -463,7 +463,178 @@
         <div class="space-10"></div>
         <div class="space-10"></div>
         <div class="favorite">
-            favorite
+            <div class="fav-content">
+                <div class="space-10"></div>
+                <div class="favorite-header">
+                    <div class="title">
+                        <div>
+                            <div></div>
+                            <div class="content">
+                                <i class="fa fa-fw fa-heart-o color-red"></i>猜你喜欢
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="clear text-center color-dark2">实时推荐最适合你的宝贝</div>
+                </div>
+                <ul class="fav-list">
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="${ctx}/static/app/img/fav01.jpg"/>
+                            <div class="desc">牧野旷歌2015秋冬新款女式修身圆领开衫羊绒衫产自鄂尔多斯市热卖</div>
+                            <div class="price">¥378.67</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="space-10"></div>
+                <div class="favorite-footer">
+                    <div class="title">
+                        <div>
+                            <div></div>
+                            <div class="content">
+                                END
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
