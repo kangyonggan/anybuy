@@ -1,8 +1,8 @@
 <#assign title="某宝网 - 登录界面"/>
 
 <@override name="app-style">
-    <link rel="stylesheet" href="${ctx}/static/app/css/web/login/index.css">
-    <link rel="stylesheet" href="${ctx}/static/app/css/web/include/login-footer.css">
+<link rel="stylesheet" href="${ctx}/static/app/css/web/login/index.css">
+<link rel="stylesheet" href="${ctx}/static/app/css/web/include/login-footer.css">
 </@override>
 
 <@override name="app-body">
@@ -32,17 +32,19 @@
             </a>
 
             <b class="f18">密码登录</b>
+
             <form id="login-form">
                 <div class="username-field">
                     <label><i class="fa fa-fw fa-2x fa-user"></i></label>
-                    <input id="mobile-input" placeholder="手机名/会员名/邮箱">
+                    <input id="mobile-input" name="mobile" placeholder="手机名/会员名/邮箱">
                 </div>
                 <div class="password-field">
                     <label><i class="fa fa-fw fa-2x fa-lock"></i></label>
-                    <input id="password-input" placeholder="请输入密码">
+                    <input id="password-input" type="password" name="password" placeholder="请输入密码">
                 </div>
+                <button id="login" type="submit">登录</button>
             </form>
-            <button id="login">登录</button>
+
             <ul class="extra-login">
                 <li>
                     <a><i class="fa fa-fw fa-weibo weibo-color"></i> 新浪登录</a>
@@ -52,6 +54,7 @@
                     <a><i class="fa fa-fw fa-wechat wechat-color"></i> 微信登录</a>
                 </li>
             </ul>
+
             <div class="login-links text-right">
                 <a href="#">忘记密码</a>
                 &nbsp;&nbsp;
@@ -67,6 +70,10 @@
 
 
 <@override name="app-script">
+
+<script src="${ctx}static/lib/validator/jquery.validate.min.js"></script>
+<script src="${ctx}static/lib/validator/jquery.validate.extends.js"></script>
+<script src="${ctx}static/app/js/web/login/index.js"></script>
 
 </@override>
 

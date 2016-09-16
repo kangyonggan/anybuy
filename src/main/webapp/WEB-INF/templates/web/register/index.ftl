@@ -13,7 +13,7 @@
 <div id="register-agree-on">
     <div class='ks-dialog-header'>
         <h3 style="display: inline-block;">注册协议</h3>
-        <a class="pull-right f22 text-muted">&times;</a>
+        <a class="pull-right f22 text-muted" href="${ctx}/">&times;</a>
     </div>
 
     <div class='ks-dialog-body'>
@@ -39,8 +39,6 @@
         </p>
     </div>
 </div>
-
-<#--<div id="nav"></div>-->
 
 <div id="page">
     <div id="header">
