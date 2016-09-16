@@ -259,7 +259,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-item">
-                        <button class="btn btn-large btn-disabled" id="register-mobile-button">
+                        <button class="btn btn-large btn-disabled"  disabled id="register-mobile-button">
                             下一步
                         </button>
                     </div>
@@ -336,10 +336,11 @@
                 var end = 100;  //结束值
                 var selection = $slider.slider("value");    //用户拖拽值
                 if(end === selection) {
-                    $registerBtn.removeClass("btn-disabled");
+                    $registerBtn.removeClass("btn-disabled").removeAttr("disabled");
+
                     //添加定时器
                 } else {
-                    $registerBtn.addClass("btn-disabled");
+                    $registerBtn.addClass("btn-disabled").attr("disabled");
                     $slider.slider("value", start);
                 }
             }
