@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*公共样式*/
+.color-orange {
+    color: #f22e00 !important;
+}
+
+.color-dark {
+    color: #6C6C6C;
+}
+
+.hidden {
+    display: none;
+}
+
+.text {
+    color: #6C6C6C;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0 5px;
+    padding: 0 5px;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.ahover:hover {
+    color: #f22e00;
+}
+/*公共样式*/
+
+/*==============================================================*/
+
+/*导航条*/
+.navbar {
+    z-index: 10000;
+    width: 100%;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.navbar-content {
+    background: #f5f5f5;
+    margin: 0 auto;
+    width: 1190px;
+    height: 35px;
+    position: relative;
+}
+
+.navbar-height {
+    line-height: 35px;
+}
+
+.navbar-relative {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar-absolute {
+    position: absolute;
+    z-index: 100001;
+    margin-left: 4px;
+    border: 1px solid #EEE;
+    border-top: none;
+    background: #fff;
+    padding: 5px;
+}
+
+.navbar-absolute-right {
+    position: absolute;
+    z-index: 100001;
+    left: 4px;
+    right: 4px;
+    border: 1px solid #EEE;
+    border-top: none;
+    background: #fff;
+    padding: 5px;
+}
+
+.navbar-limit {
+    padding: 0 5px;
+    color: #ddd;
+}
+/*导航条*/
