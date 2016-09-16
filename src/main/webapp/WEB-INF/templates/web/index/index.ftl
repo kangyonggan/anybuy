@@ -316,12 +316,15 @@
                 </div>
             </div>
         </div>
+        <div class="space-10"></div>
         <div class="often">
             often
         </div>
+        <div class="space-10"></div>
         <div class="hot">
             hot
         </div>
+        <div class="space-10"></div>
         <div class="favorite">
             favorite
         </div>
