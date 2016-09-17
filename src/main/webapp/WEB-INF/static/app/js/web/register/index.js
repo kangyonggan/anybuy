@@ -26,6 +26,14 @@ function Register() {
          * @type {any}
          */
         var $slider = $("#verify-slider");  //验证滑动条
+        Register.sliderVerify($slider);
+    };
+
+    /**
+     * 拖动滑块进行验证
+     * @param $slider 验证滑块
+     */
+    this.sliderVerify = function ($slider) {
         var $registerBtn = $("#register-mobile-button");    //注册按钮
         var $progressBar = $("#verify-progress-bar");   //进度条
         $slider.slider({
@@ -51,7 +59,7 @@ function Register() {
                         }
                     });
                 } else {
-                   Register.verifyFail($registerBtn, $slider, $progressBar);
+                    Register.verifyFail($registerBtn, $slider, $progressBar);
                 }
             }
         });
