@@ -44,6 +44,13 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
     }
 
     @Override
+    public User getUserByMobile(String mobile) {
+        User user = new User();
+        user.setMobile(mobile);
+        return super.selectOne(user);
+    }
+
+    @Override
     public List<User> getUserList(User user) {
         return super.select(user);
     }

@@ -15,6 +15,13 @@ public interface UserService {
     User getUser(Long id);
 
     /**
+     * 根据手机号查询用户
+     * @param mobile
+     * @return
+     */
+    User getUserByMobile(String mobile);
+
+    /**
      * 根据user不为null的字段进行查询
      * @param user User对象
      * @return  List<User>

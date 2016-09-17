@@ -1,12 +1,21 @@
 package com.anybuy.config.shiro;
 
+import com.anybuy.constant.ShiroConstant;
+import com.anybuy.model.ShiroUser;
+import com.anybuy.model.User;
+import com.anybuy.service.UserService;
+import com.anybuy.util.EncodeUtil;
 import lombok.extern.log4j.Log4j2;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.*;
+import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author kangyonggan
@@ -14,6 +23,20 @@ import org.apache.shiro.subject.PrincipalCollection;
  */
 @Log4j2
 public class MyShiroRealm extends AuthorizingRealm {
+
+    @Autowired
+    private UserService userService;
+
+    /**
+     * 设定Password校验的Hash算法与迭代次数.
+     */
+    @PostConstruct
+    public void initCredentialsMatcher() {
+        HashedCredentialsMatcher matcher = new HashedCredentialsMatcher(ShiroConstant.HASH_ALGORITHM);
+        matcher.setHashIterations(ShiroConstant.HASH_INTERATIONS);
+
+        setCredentialsMatcher(matcher);
+    }
 
     /**
      * 权限认证，为当前登录的Subject授予角色和权限
@@ -23,7 +46,11 @@ public class MyShiroRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        return null;
+        ShiroUser shiroUser = (ShiroUser) principalCollection.getPrimaryPrincipal();
+        log.info("Shiro权限认证, mobile={}", shiroUser.getMobile());
+
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        return info;
     }
 
     /**
@@ -32,6 +59,25 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authenticationToken) throws AuthenticationException {
-        return null;
+        //UsernamePasswordToken对象用来存放提交的登录信息
+        UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
+
+        String mobile = token.getUsername();
+        log.info("Shiro登录认证, mobile={}", mobile);
+
+        User user = userService.getUserByMobile(mobile);
+        if(null == user) {
+            throw new UnknownAccountException();
+        }
+
+        byte[] salt = EncodeUtil.decodeHex(user.getSalt());
+        ShiroUser shiroUser = new ShiroUser();
+        shiroUser.setId(user.getId());
+        shiroUser.setMobile(user.getMobile());
+        shiroUser.setNickname(user.getNickname());
+        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(shiroUser,
+                user.getPassword(), ByteSource.Util.bytes(salt), getName());
+
+        return simpleAuthenticationInfo;
     }
 }
