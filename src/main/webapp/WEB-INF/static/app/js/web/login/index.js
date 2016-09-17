@@ -66,20 +66,19 @@ function Login() {
         $login.attr("disabled", "disabled");
         $.post({
             url: "/login",
+            dataType: 'json',
             data: user,
-            success: function(result) {
+            success: function (response) {
                 $login.removeAttr("disabled");
-
-                //回调函数处理。。。
-                // result = eval('(' + result + ')');
-                // if(result.error) {
-                //     layer.msg(result.error);
-                // } else {
-                //     layer.msg("注册成功, 快去登录吧~");
-                // }
+                if (response.status == 'fail') {
+                    layer.error(response.message);
+                } else if (response.status == "success") {
+                    window.location.href = response.message;
+                }
+            },
+            error: function () {
+                layer.errorMsg("服务器内部错误，请稍后再试。");
             }
         });
-
-
     };
 }

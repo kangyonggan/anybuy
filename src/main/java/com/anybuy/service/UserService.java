@@ -34,4 +34,10 @@ public interface UserService {
 
     int deleteUser(Long id);
 
+    /**
+     * 设定安全的密码，生成随机的salt并经过N次 sha-1 hash
+     * @param user
+     */
+    void entryptPassword(User user);
+
 }

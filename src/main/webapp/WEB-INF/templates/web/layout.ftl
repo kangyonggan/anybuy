@@ -1,4 +1,5 @@
 <@override name="app-style">
+
 <link rel="stylesheet" href="${ctx}static/app/css/web/common.css"/>
 <link rel="stylesheet" href="${ctx}static/app/css/web/navbar.css"/>
 <link rel="stylesheet" href="${ctx}static/app/css/web/footer.css"/>

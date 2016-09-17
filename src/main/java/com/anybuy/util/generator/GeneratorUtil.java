@@ -10,7 +10,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /**
  * @author kangyonggan
@@ -97,24 +96,24 @@ public class GeneratorUtil {
         System.out.println("================= " + String.format(msg, val));
     }
 
-    public static void main(String[] args) throws Exception {
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("请输入小写字母开头的 domain class name (如:user): ");
-        String domain = scanner.next();
-
-        scanner = new Scanner(System.in);
-        System.out.println("请输入增改查模式是 ajax(0) 或者 common(1): ");
-        String type = scanner.next();
-
-        scanner = new Scanner(System.in);
-        System.out.println("请输入模块名是 web(0) 或者 dashboard(1) 或者 admin(2): ");
-        String module = scanner.next();
-
-        GeneratorUtil generator = new GeneratorUtil();
-        generator.init();
-        generator.process(domain, type, module);
-
-        log("build template success.");
-    }
+//    public static void main(String[] args) throws Exception {
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.println("请输入小写字母开头的 domain class name (如:user): ");
+//        String domain = scanner.next();
+//
+//        scanner = new Scanner(System.in);
+//        System.out.println("请输入增改查模式是 ajax(0) 或者 common(1): ");
+//        String type = scanner.next();
+//
+//        scanner = new Scanner(System.in);
+//        System.out.println("请输入模块名是 web(0) 或者 dashboard(1) 或者 admin(2): ");
+//        String module = scanner.next();
+//
+//        GeneratorUtil generator = new GeneratorUtil();
+//        generator.init();
+//        generator.process(domain, type, module);
+//
+//        log("build template success.");
+//    }
 }

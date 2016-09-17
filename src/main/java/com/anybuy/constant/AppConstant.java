@@ -19,4 +19,14 @@ public class AppConstant {
    */
   public static final Integer PAGE_SIZE = 10;
 
+  /**
+   * 成功
+   */
+  public static final String SUCCESS = "success";
+
+  /**
+   * 失败
+   */
+  public static final String FAIL = "fail";
+
 }

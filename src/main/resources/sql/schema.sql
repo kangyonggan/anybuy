@@ -11,6 +11,8 @@ CREATE TABLE `user` (
   COMMENT '手机号',
   password     VARCHAR(64)               NOT NULL
   COMMENT '密码',
+  salt         VARCHAR(128)              NOT NULL
+  COMMENT '密码盐',
   nickname     VARCHAR(32)               NOT NULL         DEFAULT ''
   COMMENT '昵称',
   is_deleted   TINYINT                   NOT NULL         DEFAULT 0
@@ -25,6 +27,18 @@ CREATE UNIQUE INDEX id_UNIQUE
   ON `user` (id);
 CREATE UNIQUE INDEX mobile_UNIQUE
   ON `user` (`mobile`);
+
+INSERT INTO `anybuy`.`user` (
+  mobile, password, salt, nickname, is_deleted, created_time, updated_time
+) VALUES
+(
+  '13062666053', 'a7097b4e5fa3c1d1165e66b2d72a2d060f288d64', '649f6afc93874cf8', '某小宝', 0, '2016-09-17 14:08:38',
+  '2016-09-17 14:08:38'
+),
+(
+  '13012345678', '67917009d2faccc292171bb16084d7410616cdcb', '7c3186569813f1c3', '某宝', 0, '2016-09-17 14:08:38',
+  '2016-09-17 14:08:38'
+);
 
 
 CREATE TABLE `user_info` (

@@ -1,10 +1,13 @@
 package com.anybuy.service.impl;
 
+import com.anybuy.constant.ShiroConstant;
 import com.anybuy.model.User;
 import com.anybuy.service.UserService;
-import tk.mybatis.mapper.entity.Example;
+import com.anybuy.util.DigestUtil;
+import com.anybuy.util.EncodeUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -29,6 +32,15 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
     @Override
     public int deleteUser(Long id) {
         return super.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public void entryptPassword(User user) {
+        byte[] salt = DigestUtil.generateSalt(ShiroConstant.SALT_SIZE);
+        user.setSalt(EncodeUtil.encodeHex(salt));
+
+        byte[] hashPassword = DigestUtil.sha1(user.getPassword().getBytes(), salt, ShiroConstant.HASH_INTERATIONS);
+        user.setPassword(EncodeUtil.encodeHex(hashPassword));
     }
 
     @Override

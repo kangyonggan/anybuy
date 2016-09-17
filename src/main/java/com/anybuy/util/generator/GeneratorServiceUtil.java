@@ -8,9 +8,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -77,17 +75,17 @@ public class GeneratorServiceUtil {
         System.out.println("================= " + String.format(msg, val));
     }
 
-    public static void main(String[] args) throws Exception {
-        List<String> domainNames = Arrays.asList("user", "userInfo", "bank", "cardHistory", "address");
-
-        GeneratorServiceUtil generator = new GeneratorServiceUtil();
-        generator.init();
-
-        for(String domain : domainNames) {
-            generator.process(domain);
-        }
-
-        log("build template success.");
-    }
+//    public static void main(String[] args) throws Exception {
+//        List<String> domainNames = Arrays.asList("user", "userInfo", "bank", "cardHistory", "address");
+//
+//        GeneratorServiceUtil generator = new GeneratorServiceUtil();
+//        generator.init();
+//
+//        for(String domain : domainNames) {
+//            generator.process(domain);
+//        }
+//
+//        log("build template success.");
+//    }
 
 }
