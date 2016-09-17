@@ -310,6 +310,58 @@ App.scrollDown = function(e) {
     return $(this);
 };
 
+/**
+ * 正则验证工具
+ */
+App.Regx = {
+    _Date:/^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$/,
+    _Url:/^(http|https|ftp|mailto)\:\/\/[a-z0-9\-\.]+\.[a-z]{2,3}(:[a-z0-9]*)?\/?([a-z0-9\-\._\?\,\'\/\\\+&amp;%\$#\=~!])*$/i,
+    _Mail:/^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/i,
+    _Digit:/^[-+]?[0-9]+$/,  // 数字
+    _Number:/^[-+]?\d*\.?\d+$/,  // 包括小数点的数字
+    _Int: /^-?[1-9]\d*|0$/,	//整数： 包含正负
+    _IntPostive: /^[1-9]\d*$/, //正整数
+    _Mobile:/^(13[0-9]|14[0-9]|15[0-9]|17[0-9]|18[0-9])\d{8}$/,
+    _TelDigit:/^[-]?[0-9-]+$/,
+    _Text:/^[a-z\d\u4E00-\u9FA5]+$/i,
+    _ImageFile:/(\.|\/)(gif|jpe?g|png)$/i,
+    isDate:function(val){
+        return this._Date.test(val);
+    },
+    isUrl:function(val){
+        return this._Url.test(val);
+    },
+    isMail:function(val){
+        return this._Mail.test(val);
+    },
+    isDigit:function(val){
+        return this._Digit.test(val);
+    },
+    isNumber:function(val){
+        return this._Number.test(val);
+    },
+    isInt: function(val) {
+        return this._Int.test(val);
+    },
+    isIntPostive: function(val) {
+        return this._IntPostive.test(val);
+    },
+    isNotBlank:function(val){
+        return !val || $.trim(val).length == 0;
+    },
+    isMobile:function(val){
+        return this._Mobile.test(val);
+    },
+    isTelDigit:function(val){
+        return this._TelDigit.test(val);
+    },
+    isValidText:function(val){
+        return this._Text.test(val);
+    },
+    isImageFile:function(val){
+        return this._ImageFile.test(val);
+    }
+};
 
 
 //^layer---------------------------------------------------------------------------------------------------------------

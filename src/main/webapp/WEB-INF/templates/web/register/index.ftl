@@ -87,7 +87,7 @@
                             <option value="china">中国大陆 +86</option>
                             <option value="china_tw">中国台湾 +886</option>
                         </select>
-                        <input placeholder="请输入您的手机号码" id="mobile-input">
+                        <input placeholder="请输入您的手机号码" name="mobile" id="mobile-input">
                     </div>
 
                     <div class="form-item">
@@ -127,6 +127,8 @@
 <@override name="script">
 <script src="${ctx}static/lib/select2/js/select2.min.js"></script>
 <script src="${ctx}static/lib/jqueryui/js/jquery-ui.min.js"></script>
+<script src="${ctx}static/lib/validator/jquery.validate.min.js"></script>
+<script src="${ctx}static/lib/validator/jquery.validate.add.methods.js"></script>
 <script src="${ctx}static/app/js/web/register/index.js"></script>
 </@override>
 

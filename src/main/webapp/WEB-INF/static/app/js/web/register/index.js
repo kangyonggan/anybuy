@@ -2,8 +2,6 @@ $(function () {
 
     Register.init();
 
-
-
 });
 
 var Register = new Register();
@@ -27,7 +25,69 @@ function Register() {
          */
         var $slider = $("#verify-slider");  //验证滑动条
         Register.sliderVerify($slider);
+
+        Register.registerMobileValidator();
     };
+
+    /**
+     * 注册按钮点击
+     */
+    this.registerMobileClick = function () {
+        var $registerBtn = $("#register-mobile-button");    //注册按钮
+        var mobile = $("#mobile-input").val();
+
+        $registerBtn.attr("disabled", "disabled");
+        $.post({
+            url: "/register/verify/mobile",
+            dataType: 'json',
+            data: {
+                mobile: mobile
+            },
+            success: function (response) {
+                $registerBtn.removeAttr("disabled");
+                if (response.status == 'fail') {
+                    App.errorMsg(response.message);
+                } else if (response.status == "success") {
+                    App.successMsg("验证成功");
+                }
+            },
+            error: function () {
+                App.errorMsg("服务器内部错误，请稍后再试。");
+            }
+        });
+
+    };
+
+    /**
+     * 注册手机号验证
+     */
+    this.registerMobileValidator = function () {
+        $('#register-mobile-form').validate({
+            submitHandler:function(form){
+                Register.registerMobileClick();
+            },
+            rules: {
+                "mobile": {
+                    required: true,	//必填
+                    isChinaMobile: true  //必须是手机号
+                }
+            },
+            messages: {
+                "mobile": {
+                    required: "请输入手机号",
+                    isChinaMobile: "手机号码输入错误"
+                }
+            },
+            errorElement: "span",
+            errorPlacement: function ( error, element ) {
+                error.addClass( "help-block" ).css('color', '#f40');
+                error.insertAfter( element );
+            }
+        });
+    };
+
+
+
 
     /**
      * 拖动滑块进行验证
