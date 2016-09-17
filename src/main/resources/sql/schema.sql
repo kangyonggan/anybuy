@@ -49,7 +49,7 @@ CREATE UNIQUE INDEX identity_card_UNIQUE
   ON `user_info` (`identity_card`);
 
 
-CREATE TABLE 'address' (
+CREATE TABLE `address` (
   id           BIGINT(20) AUTO_INCREMENT NOT NULL PRIMARY KEY
   COMMENT '主键,自增',
   post_code    CHAR(6)                   NOT NULL
