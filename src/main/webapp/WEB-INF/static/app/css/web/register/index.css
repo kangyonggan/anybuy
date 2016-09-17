@@ -63,45 +63,45 @@ body {
 }
 
 
-.steps {
+#steps {
     height: 46px;
     border-bottom: 2px solid #e6e6e6;
     position: relative;
 }
-.steps .tsl-switcher {
+#steps .tsl-switcher {
     position: absolute;
     right: 0;
     top: 15px;
     font-size: 12px;
 }
-.steps .tsl-switcher a {
+#steps .tsl-switcher a {
     padding: 3px 5px;
     color: #333;
     border: 1px solid #ddd;
     border-radius: 3px;
     background-color: #FFF;
 }
-.steps ol {
+#steps ol {
     width: 720px;
     margin: 0 auto;
 }
-.steps ol li.active {
+#steps ol li.active {
     color: #3e3e3e;
     border-bottom: 2px solid #ff4700;
 }
-.steps ol li.active {
+#steps ol li.active {
     color: #3e3e3e;
     border-bottom: 2px solid #ff4700;
 }
-.steps ol li.active .step{
+#steps ol li.active .step{
     background: #ff4700;
 }
 
-.steps ol li.active .step-ok {
+#steps ol li.active .step-ok {
     color: #ff4700;
 }
 
-.steps ol li {
+#steps ol li {
     display: inline;
     float: left;
     width: 150px;
@@ -113,11 +113,11 @@ body {
     color: #999;
     font-family: "\5FAE\8F6F\96C5\9ED1","\534E\6587\7EC6\9ED1","\9ED1\4F53",arial;
 }
-.steps ol li i {
+#steps ol li i {
     zoom: 1;
     font-style: normal;
 }
-.steps ol li .step-num {
+#steps ol li .step-num {
     text-align: center;
     margin-right: 5px;
     width: 24px;
@@ -128,14 +128,42 @@ body {
     color: #ffffff;
     background: #999999;
 }
-.steps ol li .step-num i{
+#steps ol li .step-num i{
     font-size: 14px;
 }
 
+#page {
+    min-height: 650px;
+}
 .content {
     padding: 50px 0;
     display: block;
 }
+
+/*输入框样式*/
+.content input {
+    height: 26px;
+    line-height: 26px;
+    padding-left: 8px;
+    font-size: 14px;
+}
+
+#register-user-info-form .form-list {
+    margin: 0 auto;
+    width: 720px;
+    font-size: 14px;
+}
+#register-user-info-form input {
+    width: 200px;
+}
+
+#register-success {
+    margin: 0 auto;
+    width: 720px;
+    text-align: center;
+}
+
+
 #register-mobile-form .form-list {
     margin: 0 auto;
     width: 720px;
@@ -164,10 +192,7 @@ body {
 
 #mobile-input {
     margin-left: -3px;
-    height: 26px;
-    line-height: 26px;
-    padding-left: 8px;
-    font-size: 14px;
+
 }
 .verify-slider-warp {
     padding-right: 150px;

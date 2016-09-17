@@ -31,6 +31,12 @@ public interface UserService {
      */
     List<User> getUserList(User user);
 
+    /**
+     * 注册用户
+     * @param user
+     */
+    void registerUser(User user);
+
     int saveUser(User user);
 
     int updateUser(User user);

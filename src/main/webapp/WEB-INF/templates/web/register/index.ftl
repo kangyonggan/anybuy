@@ -51,21 +51,21 @@
 
     </div>
 
-    <div class="steps">
+    <div id="steps">
         <ol>
-            <li class="active">
+            <li class="step-mobile active">
                 <div class="step step-num"><i>1</i></div>
                 <span>设置用户名</span>
             </li>
-            <li>
+            <li class="step-user-info">
                 <div class="step step-num"><i>2</i></div>
                 <span>填写账号信息</span>
             </li>
-            <li>
+            <li class="step-pay-method">
                 <div class="step step-num"><i>3</i></div>
                 <span>设置支付方式</span>
             </li>
-            <li>
+            <li class="step-register-success">
                 <i class="step-ok fa fa-fw fa-lg fa-check-circle"></i>
                 <span>注册成功</span>
             </li>
@@ -113,6 +113,39 @@
                 </div>
             </div>
         </form>
+
+        <form id="register-user-info-form" class="hidden">
+            <div class="form-list form-main-list">
+                <div class="form-group">
+                    <div class="form-item">
+                        <span class="form-label">昵称</span>
+                        <input placeholder="请输入您的昵称" name="nickname" id="nickname-input">
+                    </div>
+
+                    <div class="form-item">
+                        <span class="form-label">密码</span>
+                        <input placeholder="请输入密码" type="password" name="password" id="password-input">
+                    </div>
+                    <div class="form-item">
+                        <span class="form-label">密码确认</span>
+                        <input placeholder="请输入确认密码" type="password" name="re-password" id="re-password-input">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-item">
+                        <button class="btn btn-large" id="register-user-info-button">
+                            注册
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div id="register-success" class="hidden">
+            <h2>恭喜, 注册成功</h2>
+            <a href="${ctx}/login">立刻登录</a>
+        </div>
+
     </div>
 
     <div class="user-suggest taobao-color text-right">

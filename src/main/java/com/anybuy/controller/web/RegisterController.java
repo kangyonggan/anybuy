@@ -83,4 +83,34 @@ public class RegisterController {
         response.setStatus(AppConstant.SUCCESS);
         return response;
     }
+
+    @RequestMapping(value = "/verify/userinfo", method = RequestMethod.POST)
+    @ResponseBody
+    public ValidationResponse verifyUserInfo(User user, HttpServletRequest request) {
+        ValidationResponse response = new ValidationResponse();
+        response.setStatus(AppConstant.FAIL);
+
+        if(!isVerify(request)) {
+            response.setMessage("尚未进行验证,请重新进入注册页面!");
+            return response;
+        }
+
+        userService.registerUser(user);
+
+        //设置验证为假
+        response.setStatus(AppConstant.SUCCESS);
+        response.setMessage(user.getNickname());    //昵称
+        return response;
+    }
+
+    /**
+     * 当前用户是否已经验证 - 滑块
+     * @param request
+     * @return
+     */
+    private boolean isVerify(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String verifyResult = (String) session.getAttribute(SessionConstant.SESSION_IS_VERIFY_KEY);
+        return SessionConstant.IS_VERIFY.equals(verifyResult);
+    }
 }

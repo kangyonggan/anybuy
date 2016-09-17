@@ -6,6 +6,7 @@ import com.anybuy.model.User;
 import com.anybuy.service.UserService;
 import com.anybuy.util.DigestUtil;
 import com.anybuy.util.EncodeUtil;
+import com.anybuy.util.EntityUtil;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,7 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
 
     @Override
     public int saveUser(User user) {
+        EntityUtil.create(user);
         return super.insertSelective(user);
     }
 
@@ -76,5 +78,11 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
     @Override
     public List<User> getUserList(User user) {
         return super.select(user);
+    }
+
+    @Override
+    public void registerUser(User user) {
+        entryptPassword(user);
+        saveUser(user);
     }
 }

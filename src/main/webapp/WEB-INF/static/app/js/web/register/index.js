@@ -2,6 +2,7 @@ $(function () {
 
     Register.init();
 
+
 });
 
 var Register = new Register();
@@ -27,10 +28,11 @@ function Register() {
         Register.sliderVerify($slider);
 
         Register.registerMobileValidator();
+        Register.registerUserInfoValidator();
     };
 
     /**
-     * 注册按钮点击
+     * 注册[下一步]按钮点击
      */
     this.registerMobileClick = function () {
         var $registerBtn = $("#register-mobile-button");    //注册按钮
@@ -48,7 +50,10 @@ function Register() {
                 if (response.status == 'fail') {
                     App.errorMsg(response.message);
                 } else if (response.status == "success") {
-                    App.successMsg("验证成功");
+                    $("#steps .step-mobile").removeClass("active");
+                    $("#steps .step-user-info").addClass("active");
+                    $("#register-mobile-form").hide();
+                    $("#register-user-info-form").show();
                 }
             },
             error: function () {
@@ -86,6 +91,94 @@ function Register() {
         });
     };
 
+    /**
+     * 注册用户信息按钮点击事件
+     */
+    this.registerUserInfoBtnClick = function () {
+        var $userInfoBtn = $("#register-user-info-button");
+
+        var mobile = $("#mobile-input").val();
+        var nickname = $("#nickname-input").val();  //空格问题
+        var password = $("#password-input").val();
+        var user = {
+            mobile: mobile,
+            nickname: nickname,
+            password: password
+        };
+
+        $userInfoBtn.attr("disabled", "disabled");
+        $.post({
+            url: "/register/verify/userinfo",
+            dataType: 'json',
+            data: user,
+            success: function (response) {
+                $userInfoBtn.removeAttr("disabled");
+                if (response.status == 'fail') {
+                    App.errorMsg(response.message);
+                } else if (response.status == "success") {
+                    $("#steps .step-user-info").removeClass("active");
+                    $("#steps .step-register-success").addClass("active");
+                    $("#register-user-info-form").hide();
+                    $("#register-success").show();
+                }
+            },
+            error: function () {
+                App.errorMsg("服务器内部错误，请稍后再试。");
+            }
+        });
+    };
+
+    /**
+     * 验证用户信息
+     */
+    this.registerUserInfoValidator = function () {
+        $('#register-user-info-form').validate({
+            submitHandler:function(form){
+                Register.registerUserInfoBtnClick();
+            },
+            rules: {
+                "nickname": {
+                    required: true,	//必填
+                    minlength: 1,
+                    maxlength: 20	//最大输入长度
+                },
+                "password": {
+                    required: true,	//必填
+                    minlength: 6,
+                    maxlength: 64
+                },
+                "re-password": {
+                    required: true,	//必填
+                    minlength: 6,
+                    maxlength: 64,
+                    equalTo: "#password-input"
+                }
+            },
+            messages: {
+                "nickname": {
+                    required: "请输入昵称",	//必填
+                    minlength: "昵称长度不可小于1",
+                    maxlength: "昵称长度太长"	//最大输入长度
+                },
+                "password": {
+                    required: "请输入密码",	//必填
+                    minlength: "密码长度不可小于6",
+                    maxlength: "密码长度太长"	//最大输入长度
+                },
+                "re-password": {
+                    required: "请输入确认密码",	//必填
+                    minlength: "确认密码长度不可小于6",
+                    maxlength: "确认密码长度太长",
+                    equalTo: "两次输入内容不一致"
+                }
+            },
+            errorElement: "span",
+            errorPlacement: function ( error, element ) {
+                error.addClass( "help-block" ).css('color', '#f40');
+                error.insertAfter( element );
+            }
+        });
+    };
 
 
 
@@ -156,4 +249,6 @@ function Register() {
         $slider.slider("value", start);
         $progressBar.width(start);
     };
+
+
 }
