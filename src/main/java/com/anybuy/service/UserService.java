@@ -1,5 +1,6 @@
 package com.anybuy.service;
 
+import com.anybuy.model.ShiroUser;
 import com.anybuy.model.User;
 
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
 public interface UserService {
 
     List<User> findAllUsersByPage(int pageNum);
+
+    ShiroUser getShiroUser();
 
     User getUser(Long id);
 

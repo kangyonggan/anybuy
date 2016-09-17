@@ -9,7 +9,7 @@
 <@override name="app-body">
     <#include "include/navbar.ftl">
 
-    <@block name="app-content"/>
+    <@block name="content"/>
 
     <#include "include/footer.ftl">
 </@override>

@@ -1,5 +1,15 @@
+<@override name="app-style">
+    <@block name="style"/>
+</@override>
+
 <@override name="app-body">
-这是dashboard的layout
+
+    <@block name="app-content"/>
+
+</@override>
+
+<@override name="app-script">
+    <@block name="script"/>
 </@override>
 
 <@extends name="../layout.ftl"/>

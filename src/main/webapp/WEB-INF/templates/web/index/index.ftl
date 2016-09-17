@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="${ctx}static/app/css/web/index/index.css"/>
 </@override>
 
-<@override name="app-content">
+<@override name="content">
 <div class="header">
     <a class="logo pull-left" href="${ctx}/"></a>
     <div class="show-lg pull-left space-50"></div>

@@ -132,3 +132,67 @@ CREATE UNIQUE INDEX id_UNIQUE
 
 CREATE UNIQUE INDEX bank_no_UNIQUE
   ON `bank` (bank_no);
+
+CREATE TABLE `shop` (
+  id           BIGINT(20) AUTO_INCREMENT NOT NULL PRIMARY KEY
+  COMMENT '主键,自增',
+  user_id      BIGINT(20)                NOT NULL
+  COMMENT '用户ID',
+  shop_name    VARCHAR(64)               NOT NULL
+  COMMENT '商铺名称',
+  is_deleted   TINYINT                   NOT NULL         DEFAULT 0
+  COMMENT '是否删除 {0:未删除, 1:已删除}',
+  created_time DATETIME                  NOT NULL
+  COMMENT '创建时间',
+  updated_time DATETIME                  NOT NULL
+  COMMENT '最后更新时间'
+)
+  COMMENT '商铺表';
+CREATE UNIQUE INDEX id_UNIQUE
+ON `shop` (id);
+
+CREATE TABLE `goods` (
+  id           BIGINT(20) AUTO_INCREMENT NOT NULL PRIMARY KEY
+  COMMENT '主键,自增',
+  goods_name   VARCHAR(128)              NOT NULL
+  COMMENT '商品名称',
+  goods_desc   VARCHAR(512)              NOT NULL
+  COMMENT '商品描述',
+  price        DOUBLE                    NOT NULL
+  COMMENT '商品价格',
+  sort_code    VARCHAR(32)               NOT NULL
+  COMMENT '分类代码',
+  sort_name    VARCHAR(64)               NOT NULL
+  COMMENT '分类名称',
+  shop_id      BIGINT(20)                NOT NULL
+  COMMENT '商铺ID',
+  shop_name    VARCHAR(64)               NOT NULL
+  COMMENT '商铺名称',
+  is_deleted   TINYINT                   NOT NULL         DEFAULT 0
+  COMMENT '是否删除 {0:未删除, 1:已删除}',
+  created_time DATETIME                  NOT NULL
+  COMMENT '创建时间',
+  updated_time DATETIME                  NOT NULL
+  COMMENT '最后更新时间'
+)
+  COMMENT '商品表';
+CREATE UNIQUE INDEX id_UNIQUE
+ON `goods` (id);
+
+CREATE TABLE `sort` (
+  id           BIGINT(20) AUTO_INCREMENT NOT NULL PRIMARY KEY
+  COMMENT '主键,自增',
+  sort_code    VARCHAR(32)               NOT NULL
+  COMMENT '分类代码',
+  sort_name    VARCHAR(64)               NOT NULL
+  COMMENT '分类名称',
+  is_deleted   TINYINT                   NOT NULL         DEFAULT 0
+  COMMENT '是否删除 {0:未删除, 1:已删除}',
+  created_time DATETIME                  NOT NULL
+  COMMENT '创建时间',
+  updated_time DATETIME                  NOT NULL
+  COMMENT '最后更新时间'
+)
+  COMMENT '商品分类表';
+CREATE UNIQUE INDEX id_UNIQUE
+ON `sort` (id);
