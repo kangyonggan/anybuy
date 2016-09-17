@@ -38,8 +38,27 @@
         </javaClientGenerator>
 
         <!--table name-->
-        <table tableName="demo">
+        <!--<table tableName="demo">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+        <table tableName="user">
             <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
         </table>
+        <!--<table tableName="user_info">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="address">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="card_history">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+        <!--<table tableName="bank">-->
+            <!--<generatedKey column="id" sqlStatement="Mysql" identity="true"/>-->
+        <!--</table>-->
+
+
+
     </context>
 </generatorConfiguration>
