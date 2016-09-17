@@ -9,6 +9,7 @@
         <result column="goods_name" jdbcType="VARCHAR" property="goodsName"/>
         <result column="goods_desc" jdbcType="VARCHAR" property="goodsDesc"/>
         <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="picture" jdbcType="VARCHAR" property="picture"/>
         <result column="sort_code" jdbcType="VARCHAR" property="sortCode"/>
         <result column="sort_name" jdbcType="VARCHAR" property="sortName"/>
         <result column="shop_id" jdbcType="BIGINT" property="shopId"/>

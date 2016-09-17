@@ -151,6 +151,9 @@ CREATE TABLE `shop` (
 CREATE UNIQUE INDEX id_UNIQUE
 ON `shop` (id);
 
+INSERT INTO shop (user_id, shop_name, is_deleted, created_time, updated_time) VALUES
+  (2, 'YOYO笔记本', 0, now(), now());
+
 CREATE TABLE `goods` (
   id           BIGINT(20) AUTO_INCREMENT NOT NULL PRIMARY KEY
   COMMENT '主键,自增',
@@ -160,6 +163,8 @@ CREATE TABLE `goods` (
   COMMENT '商品描述',
   price        DOUBLE                    NOT NULL
   COMMENT '商品价格',
+  picture      VARCHAR(128)              NOT NULL         DEFAULT ''
+  COMMENT '商品封面',
   sort_code    VARCHAR(32)               NOT NULL
   COMMENT '分类代码',
   sort_name    VARCHAR(64)               NOT NULL
@@ -196,3 +201,12 @@ CREATE TABLE `sort` (
   COMMENT '商品分类表';
 CREATE UNIQUE INDEX id_UNIQUE
 ON `sort` (id);
+CREATE UNIQUE INDEX sort_code_UNIQUE
+ON `sort` (`sort_code`);
+
+INSERT INTO sort (sort_code, sort_name, is_deleted, created_time, updated_time) VALUES
+  ('1001', '服装', 0, NOW(), now()),
+  ('1002', '数码', 0, NOW(), now()),
+  ('1003', '保健', 0, NOW(), now()),
+  ('1004', '食品', 0, NOW(), now()),
+  ('1005', '运动', 0, NOW(), now());

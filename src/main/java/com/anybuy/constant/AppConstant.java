@@ -5,6 +5,15 @@ package com.anybuy.constant;
  * @since 16/9/15
  */
 public class AppConstant {
+    /**
+     * app跟目录
+     */
+    public static String APP_ROOT = "";
+
+    /**
+     * 上传文件的根目录
+     */
+    public static final String PATH_UPLOAD = "upload/";
 
     /**
      * 根路径
