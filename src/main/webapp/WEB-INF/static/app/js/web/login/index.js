@@ -64,7 +64,6 @@ function Login() {
             password: password
         };
         $login.attr("disabled", "disabled");
-        console.log("login...");
         $.post({
             url: "/login",
             dataType: 'json',
