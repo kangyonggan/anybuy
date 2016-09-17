@@ -13,4 +13,9 @@ public interface GoodsService {
 
     List<Goods> searchGoods(int pageNum, Integer pageSize, String goodsName, String sortCode);
 
+    void saveGoods(Goods goods);
+
+    Goods getGoods(Long id);
+
+    void updateGoods(Goods goods);
 }

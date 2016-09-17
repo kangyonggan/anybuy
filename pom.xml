@@ -141,6 +141,11 @@
             <version>${commons-collections.version}</version>
         </dependency>
         <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>${commons-codec.version}</version>
@@ -243,6 +248,7 @@
         <shiro.version>1.2.4</shiro.version>
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-collections.version>3.2.1</commons-collections.version>
+        <commons-io.version>2.4</commons-io.version>
         <commons-codec.version>1.10</commons-codec.version>
         <maven.test.version>2.18.1</maven.test.version>
         <aspectj.version>1.8.5</aspectj.version>

@@ -31,6 +31,11 @@ public class Goods {
     private Double price;
 
     /**
+     * 商品封面
+     */
+    private String picture;
+
+    /**
      * 分类代码
      */
     @Column(name = "sort_code")

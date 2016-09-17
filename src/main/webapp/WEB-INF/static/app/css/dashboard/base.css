@@ -1,0 +1,14 @@
+.space-5 {
+    height: 5px;
+}.space-10 {
+     height: 10px;
+ }
+.space-20 {
+    height: 20px;
+}
+
+.empty {
+    padding: 40px 0px;
+    font-size: 14px;
+    text-align: center;
+}
