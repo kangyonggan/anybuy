@@ -145,6 +145,27 @@
             <artifactId>commons-codec</artifactId>
             <version>${commons-codec.version}</version>
         </dependency>
+
+        <!-- AOP -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+
+        <!--json-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -224,5 +245,7 @@
         <commons-collections.version>3.2.1</commons-collections.version>
         <commons-codec.version>1.10</commons-codec.version>
         <maven.test.version>2.18.1</maven.test.version>
+        <aspectj.version>1.8.5</aspectj.version>
+        <fastjson.version>1.2.8</fastjson.version>
     </properties>
 </project>
