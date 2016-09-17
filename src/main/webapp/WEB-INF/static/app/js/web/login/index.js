@@ -64,6 +64,7 @@ function Login() {
             password: password
         };
         $login.attr("disabled", "disabled");
+        console.log("login...");
         $.post({
             url: "/login",
             dataType: 'json',
@@ -71,13 +72,13 @@ function Login() {
             success: function (response) {
                 $login.removeAttr("disabled");
                 if (response.status == 'fail') {
-                    layer.error(response.message);
+                    App.errorMsg(response.message);
                 } else if (response.status == "success") {
                     window.location.href = response.message;
                 }
             },
             error: function () {
-                layer.errorMsg("服务器内部错误，请稍后再试。");
+                App.errorMsg("服务器内部错误，请稍后再试。");
             }
         });
     };

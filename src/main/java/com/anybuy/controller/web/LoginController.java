@@ -83,7 +83,7 @@ public class LoginController {
         }
 
         SavedRequest savedRequest = WebUtils.getSavedRequest(request);
-        String url = isNullRequestUrl(savedRequest) ? PATH_INDEX : savedRequest.getRequestUrl();
+        String url = isNullRequestUrl(savedRequest) ? AppConstant.ROOT_PATH : savedRequest.getRequestUrl();
         response.setStatus(AppConstant.SUCCESS);
         response.setMessage(url);
 
