@@ -5,7 +5,6 @@
     <meta charset="utf-8"/>
     <title>${title!'某宝'}</title>
     <link rel="icon" type="image/ico" href="${ctx}/static/app/favicon.ico">
-    <link rel="stylesheet" href="${ctx}/static/app/css/app.css">
     <link rel="stylesheet" href="${ctx}/static/lib/fontawesome/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
