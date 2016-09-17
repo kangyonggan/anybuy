@@ -4,10 +4,9 @@ body {
 
 #register-agree-on {
     position: absolute;
-    top: 50%;
+    top: 28%;
     left: 50%;
     margin-left: -380px;
-    margin-top: -150px;
     width: 700px;
     height: 450px;
     z-index: 9;
