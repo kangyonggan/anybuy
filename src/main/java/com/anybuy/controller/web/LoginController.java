@@ -1,5 +1,6 @@
 package com.anybuy.controller.web;
 
+import com.anybuy.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,7 +36,11 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(Model model) {
+    public String login(User user, Model model) {
+        String mobile = user.getMobile();
+        String password = user.getPassword();
+
+
         return PATH_INDEX;
     }
 
