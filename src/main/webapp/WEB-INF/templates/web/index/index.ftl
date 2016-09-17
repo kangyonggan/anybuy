@@ -1,7 +1,7 @@
 <#assign title="某宝网 - 淘！我喜欢"/>
 
 <@override name="style">
-<link rel="stylesheet" href="${ctx}static/app/css/web/index.css"/>
+<link rel="stylesheet" href="${ctx}static/app/css/web/index/index.css"/>
 </@override>
 
 <@override name="app-content">
