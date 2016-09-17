@@ -532,6 +532,16 @@ ul {
 .face-right-login > div.coin > a.link {
     color: #6C6C6C;
     font-size: 12px;
+    display: inline-block;
+}
+
+.face-right-login > div.coin > a.img-coin {
+    margin-top: 8px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background: url("../../img/all.png") no-repeat 0 -881px;
+    background-size: 220px 897px;
 }
 
 .face-right-login > div.btn-group {
@@ -851,7 +861,7 @@ ul.app-list > li > a > img {
 }
 
 .favorite-header > div.title > div {
-    width: 500px;
+    width: 440px;
     margin: 0 auto;
 }
 
@@ -865,7 +875,7 @@ ul.app-list > li > a > img {
 
 .favorite-header > div.title > div > div.content {
     margin: 0;
-    width: 180px;
+    width: 120px;
     border-top: 0;
     height: 30px;
 }
@@ -913,6 +923,7 @@ ul.app-list > li > a > img {
     display: block;
     width: 223px;
     background: #f1f1f1;
+    height: 301px;
 }
 
 .fav-list > li > a:hover {
@@ -926,6 +937,7 @@ ul.app-list > li > a > img {
 
 .fav-list > li > a > div.desc {
     padding: 3px 10px 0 10px;
+    height: 33px;
 }
 
 .fav-list > li > a > div.price {
