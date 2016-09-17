@@ -38,9 +38,7 @@ public class RegisterController {
      */
     @RequestMapping(method = RequestMethod.GET)
     public String index(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        session.setAttribute(SessionConstant.SESSION_IS_VERIFY_KEY, SessionConstant.NOT_VERIFY);
-
+        setNotVerify(request);
         return PATH_INDEX;
     }
 
@@ -98,6 +96,7 @@ public class RegisterController {
         userService.registerUser(user);
 
         //设置验证为假
+        setNotVerify(request);
         response.setStatus(AppConstant.SUCCESS);
         response.setMessage(user.getNickname());    //昵称
         return response;
@@ -112,5 +111,14 @@ public class RegisterController {
         HttpSession session = request.getSession();
         String verifyResult = (String) session.getAttribute(SessionConstant.SESSION_IS_VERIFY_KEY);
         return SessionConstant.IS_VERIFY.equals(verifyResult);
+    }
+
+    /**
+     * 当前用户未验证 - 滑块
+     * @param request
+     */
+    private void setNotVerify(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        session.setAttribute(SessionConstant.SESSION_IS_VERIFY_KEY, SessionConstant.NOT_VERIFY);
     }
 }
