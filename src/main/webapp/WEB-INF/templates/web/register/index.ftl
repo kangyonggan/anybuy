@@ -8,7 +8,7 @@
 
 </@override>
 
-<@override name="app-content">
+<@override name="content">
 
 <div id="register-agree-on">
     <div class='ks-dialog-header'>

@@ -1,13 +1,10 @@
 package com.anybuy.service.impl;
 
-import com.anybuy.constant.ShiroConstant;
 import com.anybuy.model.User;
 import com.anybuy.service.UserService;
-import com.anybuy.util.DigestUtil;
-import com.anybuy.util.EncodeUtil;
+import tk.mybatis.mapper.entity.Example;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
@@ -48,6 +45,15 @@ public class UserServiceImpl extends BaseService<User> implements UserService {
         Example example = new Example(User.class);
         example.setOrderByClause("id desc");
         return super.selectByExample4Page(pageNum, example);
+    }
+
+    @Override
+    public ShiroUser getShiroUser() {
+        try {
+            return (ShiroUser) SecurityUtils.getSubject().getPrincipal();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     @Override
